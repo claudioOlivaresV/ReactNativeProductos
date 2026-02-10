@@ -1,13 +1,10 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import {Button, Icon} from '@ui-kitten/components';
+import {Layout, Spinner} from '@ui-kitten/components';
 
-const FacebookIcon = props => <Icon name="facebook" {...props} />;
 export const LoadingScreen = () => {
   return (
-    <View>
-      <Text>LoadingScreen</Text>
-      <Button accessoryLeft={FacebookIcon}>Login with Facebook</Button>
-    </View>
+    <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Spinner status="primary" size="large" />
+    </Layout>
   );
 };

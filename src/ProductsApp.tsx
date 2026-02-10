@@ -7,6 +7,7 @@ import {useColorScheme} from 'react-native';
 import {StackNavigartor} from './presentation/navigation/StackNavigator';
 import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
+import {AuthProvider} from './presentation/provider/auth/AuthProvider';
 
 export const ProductsApp = () => {
   const colorScheme = useColorScheme();
@@ -17,7 +18,9 @@ export const ProductsApp = () => {
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={theme}>
         <NavigationContainer>
-          <StackNavigartor />
+          <AuthProvider>
+            <StackNavigartor />
+          </AuthProvider>
         </NavigationContainer>
       </ApplicationProvider>
     </>
